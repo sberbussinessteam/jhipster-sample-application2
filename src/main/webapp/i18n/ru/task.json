@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplication2App": {
+    "task": {
+      "home": {
+        "title": "Tasks",
+        "createLabel": "Создать новый Task",
+        "createOrEditLabel": "Создать или отредактировать Task",
+        "search": "Найти Task",
+        "notFound": "No Tasks found"
+      },
+      "created": "Новый Task создан с идентификатором {{ param }}",
+      "updated": "Task обновлен с идентификатором {{ param }}",
+      "deleted": "Task удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Task {{ id }}?"
+      },
+      "detail": {
+        "title": "Task"
+      },
+      "title": "Title",
+      "description": "Description",
+      "job": "Job"
+    }
+  }
+}
