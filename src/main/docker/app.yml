@@ -1,0 +1,60 @@
+version: '2'
+services:
+  jhipstersampleapplication2-app:
+    image: jhipstersampleapplication2
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,swagger
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_CLOUD_CONSUL_HOST=consul
+      - SPRING_CLOUD_CONSUL_PORT=8500
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://jhipstersampleapplication2-postgresql:5432/jhipsterSampleApplication2
+      - JHIPSTER_CACHE_REDIS_SERVER=redis://jhipstersampleapplication2-redis:6379
+      - JHIPSTER_CACHE_REDIS_CLUSTER=false
+      # - JHIPSTER_CACHE_REDIS_SERVER=redis://jhipstersampleapplication2-redis:6379
+      # - JHIPSTER_CACHE_REDIS_CLUSTER=true
+      - SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI=http://keycloak:9080/auth/realms/jhipster
+      - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_ID=web_app
+      - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET=web_app
+      - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
+      - SPRING_DATA_JEST_URI=http://jhipstersampleapplication2-elasticsearch:9200
+      - SPRING_ELASTICSEARCH_REST_URIS=http://jhipstersampleapplication2-elasticsearch:9200
+      - KAFKA_BOOTSTRAPSERVERS=kafka:9092
+    ports:
+      - 8080:8080
+  jhipstersampleapplication2-postgresql:
+    extends:
+      file: postgresql.yml
+      service: jhipstersampleapplication2-postgresql
+  jhipstersampleapplication2-redis:
+    extends:
+      file: redis.yml
+      service: jhipstersampleapplication2-redis
+  jhipstersampleapplication2-elasticsearch:
+    extends:
+      file: elasticsearch.yml
+      service: jhipstersampleapplication2-elasticsearch
+  kafka:
+    extends:
+      file: kafka.yml
+      service: kafka
+    environment:
+      - KAFKA_ADVERTISED_HOST_NAME=kafka
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
+  zookeeper:
+    extends:
+      file: kafka.yml
+      service: zookeeper
+  consul:
+    extends:
+      file: consul.yml
+      service: consul
+
+  consul-config-loader:
+    extends:
+      file: consul.yml
+      service: consul-config-loader
+  keycloak:
+    extends:
+      file: keycloak.yml
+      service: keycloak
