@@ -1,0 +1,23 @@
+{
+  "jhipsterSampleApplication2App": {
+    "region": {
+      "home": {
+        "title": "Regions",
+        "createLabel": "Создать новый Region",
+        "createOrEditLabel": "Создать или отредактировать Region",
+        "search": "Найти Region",
+        "notFound": "No Regions found"
+      },
+      "created": "Новый Region создан с идентификатором {{ param }}",
+      "updated": "Region обновлен с идентификатором {{ param }}",
+      "deleted": "Region удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Region {{ id }}?"
+      },
+      "detail": {
+        "title": "Region"
+      },
+      "regionName": "Region Name"
+    }
+  }
+}

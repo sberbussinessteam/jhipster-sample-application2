@@ -1,0 +1,27 @@
+{
+  "jhipsterSampleApplication2App": {
+    "location": {
+      "home": {
+        "title": "Locations",
+        "createLabel": "Создать новый Location",
+        "createOrEditLabel": "Создать или отредактировать Location",
+        "search": "Найти Location",
+        "notFound": "No Locations found"
+      },
+      "created": "Новый Location создан с идентификатором {{ param }}",
+      "updated": "Location обновлен с идентификатором {{ param }}",
+      "deleted": "Location удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Location {{ id }}?"
+      },
+      "detail": {
+        "title": "Location"
+      },
+      "streetAddress": "Street Address",
+      "postalCode": "Postal Code",
+      "city": "City",
+      "stateProvince": "State Province",
+      "country": "Country"
+    }
+  }
+}

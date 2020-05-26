@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplication2App": {
+    "department": {
+      "home": {
+        "title": "Departments",
+        "createLabel": "Создать новый Department",
+        "createOrEditLabel": "Создать или отредактировать Department",
+        "search": "Найти Department",
+        "notFound": "No Departments found"
+      },
+      "created": "Новый Department создан с идентификатором {{ param }}",
+      "updated": "Department обновлен с идентификатором {{ param }}",
+      "deleted": "Department удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Department {{ id }}?"
+      },
+      "detail": {
+        "title": "Department"
+      },
+      "departmentName": "Department Name",
+      "location": "Location",
+      "employee": "Employee"
+    }
+  }
+}
